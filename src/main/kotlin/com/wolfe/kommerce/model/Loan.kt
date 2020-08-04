@@ -1,0 +1,42 @@
+package com.wolfe.kommerce.model
+
+import java.nio.CharBuffer
+
+public data class Loan(val approvalDate: String?,
+                       val approvalFiscalYear: String?,
+                       val asOfDate: String?,
+                       val bankCity: String?,
+                       val bankName: String?,
+                       val bankState: String?,
+                       val bankStreet: String?,
+                       val bankZip: String?,
+                       val borrCity: String?,
+                       val borrName: String?,
+                       val borrState: String?,
+                       val borrStreet: String?,
+                       val borrZip: String?,
+                       val businessType: String?,
+                       val chargeOffDate: String?,
+                       val congressionalDistrict: String?,
+                       val deliveryMethod: String?,
+                       val firstDisbursementDate: String?,
+                       val franchiseCode: String?,
+                       val franchiseName: String?,
+                       val grossApproval: String?,
+                       val grossChargeOffAmount: String?,
+                       val initialinterestrate: String?,
+                       val jobsSupported: String?,
+                       val loanStatus: String?,
+                       val naicsCode: String?,
+                       val naicsDescription: String?,
+                       val paidInFullDate: String?,
+                       val program: String?,
+                       val projectCounty: String?,
+                       val projectState: String?,
+                       val revolverStatus: String?,
+                       val sbaDistrictOffice: String?,
+                       val sbaguaranteedapproval: String?,
+                       val terminMonths: String?,
+                       val subpgmdesc: String?) {
+}
+
