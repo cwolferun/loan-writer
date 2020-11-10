@@ -3,7 +3,7 @@ package com.wolfe.kommerce.util
 import java.nio.CharBuffer
 
 
-fun main() {
+fun main3() {
     val things = "approval_date,approval_fiscal_year,as_of_date,bank_city,bank_name,bank_state,bank_street,bank_zip,borr_city,borr_name,borr_state,borr_street,borr_zip,business_type,charge_off_date,congressional_district,delivery_method,first_disbursement_date,franchise_code,franchise_name,gross_approval,gross_charge_off_amount,initialinterestrate,jobs_supported,loan_status,naics_code,naics_description,paid_in_full_date,program,project_county,project_state,revolver_status,sba_district_office,sbaguaranteedapproval,termin_months,subpgmdesc"
 //    things.split(",").forEach {
 //        println("val ${toGoodCase(it)}: String?,")
