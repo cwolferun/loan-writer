@@ -1,5 +1,6 @@
 package com.wolfe.kommerce.service
 
+import com.sun.source.tree.BinaryTree
 import com.wolfe.kommerce.model.Loan
 import com.wolfe.kommerce.model.LoanEntity
 import com.wolfe.kommerce.repository.LoanRepository
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service
 import java.io.File
 import java.nio.CharBuffer
 import java.time.LocalDate
+import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicLong
@@ -45,19 +47,19 @@ public class CsvExtractor(val loanRepository: LoanRepository) {
                 }
                 topRow.add(String(buffer.subSequence(0, buffer.position()).array().copyOfRange(0, buffer.position())))
                 val dates = mutableListOf<LocalDate?>()
-                dates.add(topRow.get(0)?.let { LocalDate.parse(it) })
-                dates.add(topRow.get(2)?.let { LocalDate.parse(it) })
-                dates.add(topRow.get(14)?.let { LocalDate.parse(it) })
-                dates.add(topRow.get(17)?.let { LocalDate.parse(it) })
-                dates.add(topRow.get(27)?.let { LocalDate.parse(it) })
-
-                val loan = Loan(long.incrementAndGet(), dates.get(0), topRow.get(1)?.toInt(), dates.get(1), topRow.get(3), topRow.get(4), topRow.get(5), topRow.get(6), topRow.get(7),
-                        topRow.get(8), topRow.get(9), topRow.get(10), topRow.get(11), topRow.get(12), topRow.get(13), dates.get(2), topRow.get(15)?.toInt(),
-                        topRow.get(16), dates.get(3), topRow.get(18), topRow.get(19), topRow.get(20)?.toLong(), topRow.get(21)?.toLong(), topRow.get(22)?.toDouble(), topRow.get(23)?.toInt(),
-                        topRow.get(24), topRow.get(25), topRow.get(26), dates.get(4), topRow.get(28), topRow.get(29), topRow.get(30), topRow.get(31),
-                        topRow.get(32), topRow.get(33)?.toLong(), topRow.get(34)?.toInt(), topRow.get(35))
+                dates.add(topRow[0]?.let { LocalDate.parse(it) })
+                dates.add(topRow[2]?.let { LocalDate.parse(it) })
+                dates.add(topRow[14]?.let { LocalDate.parse(it) })
+                dates.add(topRow[17]?.let { LocalDate.parse(it) })
+                dates.add(topRow[27]?.let { LocalDate.parse(it) })
+                val loan = Loan(long.incrementAndGet(), dates[0], topRow[1]?.toInt(), dates[1], topRow[3], topRow[4], topRow[5], topRow[6], topRow[7],
+                        topRow[8], topRow[9], topRow[10], topRow[11], topRow[12], topRow[13], dates[2], topRow[15]?.toInt(),
+                        topRow[16], dates[3], topRow[18], topRow[19], topRow[20]?.toLong(), topRow[21]?.toLong(), topRow[22]?.toDouble(), topRow[23]?.toInt(),
+                        topRow[24], topRow[25], topRow[26], dates[4], topRow[28], topRow[29], topRow[30], topRow[31],
+                        topRow[32], topRow[33]?.toLong(), topRow[34]?.toInt(), topRow[35])
 
                 val loanEntity = mapper.map(loan)
+                loanEntities?.add(loanEntity)
                 loanEntities.add(loanEntity)
             }
         }
@@ -71,6 +73,8 @@ public class CsvExtractor(val loanRepository: LoanRepository) {
                     listNumber++
                 }
             }
+
+
             listOfLists.forEach { executorService.submit { loanRepository.saveAll(it) } }
     }
 }
