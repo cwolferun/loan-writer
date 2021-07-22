@@ -1,4 +1,4 @@
-package com.wolfe.kommerce.config
+package com.wolfe.kommerce.writer.config
 
 import com.amazonaws.auth.DefaultAWSCredentialsProviderChain
 import com.amazonaws.client.builder.AwsClientBuilder

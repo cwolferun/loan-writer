@@ -1,10 +1,10 @@
-package com.wolfe.kommerce.service
+package com.wolfe.kommerce.writer.service
 
 import com.amazonaws.services.s3.AmazonS3
 import com.amazonaws.services.s3.model.GetObjectRequest
 import com.amazonaws.services.s3.model.ListBucketsRequest
 import com.amazonaws.services.s3.model.ListObjectsRequest
-import com.wolfe.kommerce.event.TriggerReadEvent
+import com.wolfe.kommerce.writer.event.TriggerReadEvent
 import lombok.extern.slf4j.Slf4j
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.event.EventListener

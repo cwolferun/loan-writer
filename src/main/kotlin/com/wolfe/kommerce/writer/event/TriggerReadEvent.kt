@@ -1,4 +1,4 @@
-package com.wolfe.kommerce.event
+package com.wolfe.kommerce.writer.event
 
 import org.springframework.context.ApplicationEvent
 

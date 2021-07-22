@@ -1,4 +1,4 @@
-package com.wolfe.kommerce.util
+package com.wolfe.kommerce.writer.util
 
 import java.nio.CharBuffer
 

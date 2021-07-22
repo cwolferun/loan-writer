@@ -1,4 +1,4 @@
-package com.wolfe.kommerce.model
+package com.wolfe.kommerce.writer.model
 
 import java.time.LocalDate
 import java.util.*

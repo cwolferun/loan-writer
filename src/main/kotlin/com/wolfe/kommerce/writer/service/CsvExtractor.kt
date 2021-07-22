@@ -1,9 +1,9 @@
-package com.wolfe.kommerce.service
+package com.wolfe.kommerce.writer.service
 
 import com.sun.source.tree.BinaryTree
-import com.wolfe.kommerce.model.Loan
-import com.wolfe.kommerce.model.LoanEntity
-import com.wolfe.kommerce.repository.LoanRepository
+import com.wolfe.kommerce.writer.model.Loan
+import com.wolfe.kommerce.writer.model.LoanEntity
+import com.wolfe.kommerce.writer.repository.LoanRepository
 import org.modelmapper.ModelMapper
 import org.modelmapper.TypeMap
 import org.slf4j.Logger

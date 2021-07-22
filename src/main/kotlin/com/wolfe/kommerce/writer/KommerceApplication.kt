@@ -1,6 +1,6 @@
-package com.wolfe.kommerce
+package com.wolfe.kommerce.writer
 
-import com.wolfe.kommerce.service.CsvExtractor
+import com.wolfe.kommerce.writer.service.CsvExtractor
 import lombok.extern.slf4j.Slf4j
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.autoconfigure.SpringBootApplication

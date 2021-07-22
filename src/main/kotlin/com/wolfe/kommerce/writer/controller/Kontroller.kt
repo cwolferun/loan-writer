@@ -1,6 +1,6 @@
-package com.wolfe.kommerce.controller
+package com.wolfe.kommerce.writer.controller
 
-import com.wolfe.kommerce.event.TriggerReadEvent
+import com.wolfe.kommerce.writer.event.TriggerReadEvent
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.ApplicationEventPublisher
 import org.springframework.web.bind.annotation.GetMapping
