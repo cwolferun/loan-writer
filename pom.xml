@@ -12,7 +12,7 @@
     <artifactId>kommerce</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>kommerce</name>
-    <description>us import analysis in kotlin</description>
+    <description>use kotlin to read big data from csv file and write to local mysql</description>
 
     <properties>
         <java.version>13</java.version>

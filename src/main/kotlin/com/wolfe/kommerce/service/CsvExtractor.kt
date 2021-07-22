@@ -59,7 +59,6 @@ public class CsvExtractor(val loanRepository: LoanRepository) {
                         topRow[32], topRow[33]?.toLong(), topRow[34]?.toInt(), topRow[35])
 
                 val loanEntity = mapper.map(loan)
-                loanEntities?.add(loanEntity)
                 loanEntities.add(loanEntity)
             }
         }

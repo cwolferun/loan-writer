@@ -6,18 +6,20 @@ import com.amazonaws.services.s3.model.ListBucketsRequest
 import com.amazonaws.services.s3.model.ListObjectsRequest
 import com.wolfe.kommerce.event.TriggerReadEvent
 import lombok.extern.slf4j.Slf4j
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.event.EventListener
 import org.springframework.scheduling.annotation.Async
 import org.springframework.stereotype.Service
-import java.io.File
 import java.io.FileOutputStream
 import java.nio.file.Files
-import java.nio.file.Path
 import java.util.zip.GZIPInputStream
 
 @Slf4j
 @Service
 public class S3Service(val s3: AmazonS3, val csvExtractor: CsvExtractor) {
+
+    @Value("s3ObjectName")
+    lateinit var s3ObjectName:String
 
     @Async
     @EventListener
@@ -27,7 +29,7 @@ public class S3Service(val s3: AmazonS3, val csvExtractor: CsvExtractor) {
         s3.listBuckets(ListBucketsRequest()).forEach { println(it) }
         val file = Files.createTempFile("thing","csv")
 
-        val read = s3.getObject(GetObjectRequest("us-commerce", "sba_loans/202004220103/sba_loans-7a_data__202004220103__202004220103.csv.gz"))
+        val read = s3.getObject(GetObjectRequest("us-commerce", s3ObjectName))
                 .objectContent
 
         val inZip = GZIPInputStream(read)
